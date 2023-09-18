@@ -1,11 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auth_App</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap5.2.3/bootstrap.min.css' %}">
+    <title>{{ title }}</title>
 </head>
 <body>
-    This is body
+    <div class="container">
+        <nav class="navbar navbar-expand-lg mx-auto">
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                
+                <li class="nav-item">
+                  <a class="nav-link text-bg-secondary p-3 m-3" href="/">Home</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link text-bg-secondary p-3 m-3" href="{% url 'userlogout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link text-bg-secondary p-3 m-3" href="{% url 'reg' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-bg-secondary p-3 m-3" href="{% url 'login_page' %}">Login</a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+          
+        </nav>
+        {% block body_block %}
+        {% endblock %}
+    </div>
+    
+
 </body>
 </html>

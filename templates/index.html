@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+
+<h1 class="text-bg-success p-5">Main page Unlocked Successfully</h1>
+
+<p>Hi <span style="color:red; font-size:2rem">{{ userInfoA.username }},</span></p> 
+    
+
+<p>Facebook ID link: <a href="{{ userInfoB.fb_link }}">{{ userInfoB.fb_link }}</a></p>
+{% endblock %}
