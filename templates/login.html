@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block body_block %}
 
-<h3 class="text-bg-primary p-3 text-center rounded">Please Login</h3>
+<h3 class="text-primary p-2 rounded">Please Login</h3>
 
 <form action="{% url 'userlogin' %}" method="post">
     {% csrf_token %}
