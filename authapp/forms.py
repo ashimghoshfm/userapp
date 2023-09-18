@@ -11,4 +11,4 @@ class UserForm(forms.ModelForm):
 class UserInfoForm(forms.ModelForm):
     class Meta():
         model = models.UserInfo
-        fields = ('fb_link', 'profile_pic')
+        fields = ('fullname', 'fb_link', 'profile_pic')
